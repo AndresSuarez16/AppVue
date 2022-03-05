@@ -1,34 +1,36 @@
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-export default{
-  data(){
-    return{
-      text: ''
-    }
-  }
-}
+
+export default {
+  data() {
+    return {
+      num1: 5,
+      num2: 6,
+      resultado: "",
+    };
+  },
+  methods: {
+    sumar() {
+      this.resultado = num1 + num2;
+    },
+    restar() {
+      this.resultado = num1 - num2;
+    },
+  },
+};
 </script>
 
 <template>
-<div>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div>
+    <button @click="sumar">sumar</button>
+    <p>La Suma de los dos numeros es: {{ resultado }}</p>
 
-    <div class="wrapper">
-      <HelloWorld msg="Lo hiciste!" />
-    </div>
-  </header>
-  <main>
-    <input v-model="text" placeholder="Escribe aqui">
-    <p>{{ text }}</p>
-  </main>
-</div>
-
-
+    <button id="resta" @click="restar">restar</button>
+    <p id="resta">La Resta de los dos numeros es: {{ resultado }}</p>
+  </div>
 </template>
 
 <style>
-@import './assets/base.css';
+@import "./assets/base.css";
 
 #app {
   max-width: 1280px;
