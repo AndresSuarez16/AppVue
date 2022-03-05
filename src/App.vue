@@ -1,20 +1,30 @@
-<script setup>
+<script>
 import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+export default{
+  data(){
+    return{
+      text: ''
+    }
+  }
+}
 </script>
 
 <template>
+<div>
   <header>
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <HelloWorld msg="Lo hiciste!" />
     </div>
   </header>
-
   <main>
-    <TheWelcome />
+    <input v-model="text" placeholder="Escribe aqui">
+    <p>{{ text }}</p>
   </main>
+</div>
+
+
 </template>
 
 <style>
